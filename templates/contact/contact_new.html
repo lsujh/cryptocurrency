@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Отправить сообщение
+{% endblock title %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 offset-2">
+                <h1>Новое сообщение</h1>
+                <table class="table">
+                    <form action="" method="post">
+                        {{ csrf_input }}
+                        {% for field in form %}
+                            <tr>
+                                <td> {{ field.label }}</td>
+                                <td>  {{ field }}</td>
+                                <td>{{ field.errors }}</td>
+                            </tr>
+                        {% endfor %}
+                        <tr><td>
+                            <button class="btn btn-outline-primary" type="submit">Отправить</button></td></tr>
+                    </form>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
